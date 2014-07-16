@@ -49,6 +49,7 @@ extern CGFloat const MRoundedButtonMaxValue;
 @property (nonatomic, weak)     UILabel                     *detailTextLabel;
 @property (nonatomic, weak)     UIImageView                 *imageView;
 @property (nonatomic, assign)   UIEdgeInsets                contentEdgeInsets;
+@property (nonatomic, assign)   UIEdgeInsets                hitTestEdgeInsets;
 
 + (instancetype)buttonWithFrame:(CGRect)frame
                     buttonStyle:(MRoundedButtonStyle)style
