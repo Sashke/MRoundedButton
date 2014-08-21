@@ -132,6 +132,7 @@ static CGRect CGRectEdgeInset(CGRect rect, UIEdgeInsets insets)
         _cornerRadius = 0.0;
         _borderWidth = 0.0;
         _contentEdgeInsets = UIEdgeInsetsZero;
+        _hitTestEdgeInsets = UIEdgeInsetsZero;
         
         self.foregroundView = [[UIView alloc] initWithFrame:CGRectNull];
         self.foregroundView.backgroundColor = self.foregroundColor;
@@ -401,6 +402,18 @@ static CGRect CGRectEdgeInset(CGRect rect, UIEdgeInsets insets)
 }
 
 #pragma mark - Touchs
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    if (UIEdgeInsetsEqualToEdgeInsets(self.hitTestEdgeInsets, UIEdgeInsetsZero) || !self.enabled || self.hidden) {
+        return [super pointInside:point withEvent:event];
+    }
+    CGRect relativeFrame = self.bounds;
+    CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.hitTestEdgeInsets);
+    
+    return CGRectContainsPoint(hitFrame, point);
+}
+
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     UIView *touchView = [super hitTest:point withEvent:event];
