@@ -328,9 +328,9 @@ static CGRect CGRectEdgeInset(CGRect rect, UIEdgeInsets insets)
 - (void)setEnabled:(BOOL)enabled
 {
     [super setEnabled:enabled];
-    [UIView animateWithDuration:0.2 animations:^{
-        self.foregroundView.alpha = enabled ? 1.0 : 0.5;
-    }];
+    //[UIView animateWithDuration:0.2 animations:^{
+      //  self.foregroundView.alpha = enabled ? 1.0 : 0.5;
+    //}];
 }
 
 - (void)setSelected:(BOOL)selected
