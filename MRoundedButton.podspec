@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/mrcrow/MRoundedButton"  
   s.license          = { :type => 'MIT', :file => 'LICENSE' }  
   s.author           = { "Michael WU" => "wwz.michael@gmail.com" }  
-  s.source           = { :git => "https://github.com/Sashke/MRoundedButton.git", :tag => "Sashke", :branch => "neweerButtons" }    
+  s.source           = { :git => "https://github.com/Sashke/MRoundedButton.git", :tag => "neweer", :branch => "neweerButtons" }    
   
   s.platform     = :ios, '6.0'   
   s.requires_arc = true
